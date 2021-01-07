@@ -10,6 +10,8 @@
         div.page {
             height: 100vh;
             display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 20px 10fr 20px;
             grid-template-areas: "header header"
                                  "menu mainContent"
                                  "menu footer";
@@ -29,6 +31,16 @@
         Div.footer {
             background-color: lightgray;
             grid-area: footer;
+        }
+        @media only screen and (max-width: 600px) {
+            div.page {
+            grid-template-columns: 1fr;
+            grid-template-rows: 20px 1fr 4fr 20px;
+            grid-template-areas: "header"
+                                 "menu"
+                                 "mainContent"
+                                 "footer";
+        }   
         }
 
     </style>
