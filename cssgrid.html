@@ -3,21 +3,32 @@
     <meta charset="utf-8">
     <title></title>
     <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
         div.page {
             height: 100vh;
             display: grid;
+            grid-template-areas: "header header"
+                                 "menu mainContent"
+                                 "menu footer";
         }
         Div.header {
             background-color: aqua;
+            grid-area: header;
         }
         Div.menu {
             background-color: aquamarine;
+            grid-area: menu;
         }
         Div.mainContent {
             background-color: blanchedalmond;
+            grid-area: mainContent;
         }
         Div.footer {
             background-color: lightgray;
+            grid-area: footer;
         }
 
     </style>
