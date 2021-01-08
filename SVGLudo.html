@@ -1,10 +1,28 @@
 <html>
 <head>
 <style>
+    body {
+        background-color: turquoise;
+    }
+    @media only screen and (min-aspect-ratio: 1/1) {
+        svg { 
+            height: 95vh;
+        }
+    }
+    @media only screen and (min-aspect-ratio: 1/1) {
+        svg { 
+            width: 95vw;
+        }
+    }
         rect.board {
             stroke: black;
             stroke-width: 2px;
             fill: rgb(235,185,123);
+        }
+        rect.part {
+            stroke: black;
+            stroke-width: 1px;
+            fill: transparent
         }
         rect.square {
             fill: white;
@@ -20,6 +38,13 @@
         circle.blue {
             fill: blue;
         }
+        circle.white {
+            fill: white;
+        }
+        polygon.red {
+            fill: red;
+            stroke: black;
+        } 
 
 </style>
 
@@ -34,16 +59,27 @@
         <rect class="square" x="53" y="17" width="6" height="6" />
         <rect class="square" x="53" y="23" width="6" height="6" />
         <rect class="square" x="53" y="29" width="6" height="6" />
-        <rect class="square" x="47" y="17" width="6" height="6" />
-        <rect class="square" x="47" y="23" width="6" height="6" />
-        <rect class="square" x="47" y="29" width="6" height="6" />
-        <rect class="square" x="47" y="11" width="6" height="6" />
+        <rect class="square" x="53" y="35" width="6" height="6" />
+        <rect class="red square" x="47" y="17" width="6" height="6" />
+        <rect class="red square" x="47" y="23" width="6" height="6" />
+        <rect class="red square" x="47" y="29" width="6" height="6" />
+        <rect class="red square" x="47" y="35" width="6" height="6" />
+        <rect class="red square" x="47" y="11" width="6" height="6" />
         <rect class="square" x="41" y="11" width="6" height="6" />
         <rect class="square" x="41" y="17" width="6" height="6" />
         <rect class="square" x="41" y="23" width="6" height="6" />
         <rect class="square" x="41" y="29" width="6" height="6" />
-        
-        <circle class="blue circle" cx="21" cy="21" r="15"/>
+        <rect class="square" x="41" y="35" width="6" height="6" />
+  
+        <rect class="part" x="5" y="5" width="36" height="36" />
+
+        <circle class="blue circle" cx="23" cy="23" r="15"/>
+        <circle class="white circle" cx="17" cy="17" r="3"/>
+        <circle class="white circle" cx="17" cy="29" r="3"/>
+        <circle class="white circle" cx="29" cy="17" r="3"/>
+        <circle class="white circle" cx="29" cy="29" r="3"/>
+
+        <polygon class="Red Triangle" points="50,50,59,41,41,41"/>
     </svg>
 
 </body>
