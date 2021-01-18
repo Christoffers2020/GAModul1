@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="sizeSlider" type="range" min="100" max="500" step="10" oninput="showDiv()" />
+    <br /><input id="textInput" type="text" oninput="showDiv()" value="endre teksten!" />
+    <select id="colorChooser" onchange="showDiv()">
+        <option value="red">Red color</option>
+        <option selected value="green">Green color</option>
+        <option value="blue">Blue color</option>
+    </select>
+    <p>Ferdighet 7a - Sette variabel til tilfeldig tall</p>
+    <div id="resultat"></div>
+    <div id="resultatHtml" style="font-family: monospace"></div>
+    <!--
+    Last siden på nytt for nye tall.
+    Endre tallet 10 på linje 20 og 21 til noe annet. Hva blir annerledes?
+    Endre tallet 100 på linje 20 og 21 til noe annet. Hva blir annerledes?
+    Ta bort Math.floor() på linje 20 og 21. Hva blir forskjellen?
+    -->
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var resultatHtmlDiv = document.getElementById('resultatHtml');
+        var sizeSlider = document.getElementById('sizeSlider');
+        var textInput = document.getElementById('textInput');
+        var colorChooser = document.getElementById('colorChooser');
+
+        calculate();
+
+        function calculate() {
+            var width = 100 + Math.floor(Math.random() * 10);
+            var height = 100 + Math.floor(Math.random() * 10);
+            var sum = width + height;
+            var differense = width - height;
+            var produkt = width * height;
+            var kvotient = width / height;
+            resultatDiv.innerHTML = '' +
+                width + '+' + height + '=' + sum + '<br/>' +
+                width + '-' + height + '=' + differense + '<br/>' +
+                width + '*' + height + '=' + produkt + '<br/>' +
+                width + '/' + height + '=' + kvotient +
+                '<div style="'
+                + 'background-color: ' + colorChooser.value + ';'
+                + 'width: ' + sizeSlider.value + 'px;'
+                + 'height: ' + sizeSlider.value + 'px;'
+                + '">' +
+                textInput.value + '</div>';
+                resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+
+        }
+    </script>
+</body>
+</html>
