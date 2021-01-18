@@ -1,0 +1,30 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="Hightslider" type="range" min="100" max="500" step="1" oninput="showDiv()" />
+    <input id="widthslider" type="range" min="100" max="500" step="1" oninput="showDiv()" />
+    <input id="Hightslider" type="range" min="1" max="1000" step="1" oninput="calculate()" value="2">
+    <input id="widthslider" type="range" min="1" max="1000" step="1" oninput="calculate()" value="2">
+   
+    <div id="resultat"></div>
+    <script>
+
+        var resultatDiv = document.getElementById('resultat');
+        var widthsliderinput = document.getElementById('widthslider');
+        var hightsliderinput = document.getElementById('Hightslider');
+    
+        calculate();
+
+        function calculate() {
+            var Hightslider = parseInt(hightsliderinput.value);
+            var widthslider = parseInt(widthliderinput.value);
+            var sum
+            resultatDiv.innerHTML = '' +
+
+        }
+    </script>
+</body>
+</html>
