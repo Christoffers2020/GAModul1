@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<style>
+    body {
+        padding: 0px;
+        margin: 0px;
+        background-color: darkgreen;
+    }
+    div.united {
+            border-style: solid;
+            text-align:right
+            font-size: 100%;
+            font-weight: bold;
+        }
+        img{ float: center;
+        }
+
+</style>
+<body>
+  <Div>
+    <p>Ferdighet 5 - Kode som kjøres når siden lastes vs kode i en funksjon</p>
+    <button onclick="doClick()">Trykk her</button>
+    Prøv også å reloade siden.
+</Div>
+<hr>
+<div>  
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" alt="Dette er united" style="width:100px;height:100px;"/>
+</div>
+   
+   <script>
+        alert('Dette skjer når siden lastes');
+
+        function doClick() {
+            alert('Dette skjer i funksjonen doClick');
+        }
+    </script>
+</body>
+</html>
