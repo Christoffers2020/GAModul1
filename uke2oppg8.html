@@ -33,8 +33,8 @@
         calculate();
 
         function calculate() {
-            var width = 100 + Math.floor(Math.random() * 10);
-            var height = 100 + Math.floor(Math.random() * 10);
+            var width = 100 + Math.floor(Math.random() * sizeSlider.value);
+            var height = 100 + Math.floor(Math.random() * sizeSlider.value);
             var sum = width + height;
             var differense = width - height;
             var produkt = width * height;
@@ -46,8 +46,8 @@
                 width + '/' + height + '=' + kvotient +
                 '<div style="'
                 + 'background-color: ' + colorChooser.value + ';'
-                + 'width: ' + sizeSlider.value + 'px;'
-                + 'height: ' + sizeSlider.value + 'px;'
+                + 'width: ' + width + 'px;'
+                + 'height: ' + height + 'px;'
                 + '">' +
                 textInput.value + '</div>';
                 resultatHtmlDiv.innerText = resultatDiv.innerHTML;
