@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Obligatorisk oppgave 1</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+    
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fix"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="obligatoriskoppgave1.js"></script>
+    <script>
+             
+        // Unit test 1, sjekke om datoen er gyldig.
+            QUnit.testDate("Sjekke om datoen er gyldig - '03.02.2020'", function (assert) {
+                document.getElementById('testDate').innerHTML = (this)
+                const isValid = isDateValid('03.02.2020');
+                const expected = true;
+                assert.equal(isValid, true);
+        });
+
+        // Unit test 2, finne 3. og 6. posisjonene for punktummene.
+            QUnit.testDate("Punktum i 3. og 6. posisjon", function (assert) {
+                const actual = checkForDots('.');
+                const expected = true;
+                assert.equal(actual, expected);
+        });
+       
+        // Unit test 3.
+            QUnit.testDate("Sjekker år", function (assert) {
+                const actual = CheckYear('0000');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+        // Unit test 4.
+            QUnit.testDate("Sjekker måned", function (assert) {
+                const actual = CheckMonth('00');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+        // Unit test 5.
+            QUnit.testDate("Sjekker vanlig dag", function (assert) {
+                const actual = CheckDays('00');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+        // Unit test 6.
+            QUnit.testDate("Sjekker om det er februar", function (assert) {
+                const actual = checkFebruary('29');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+        // Unit test 7.
+            QUnit.testDate("Sjekker om det er skuddår- ''", function (assert) {
+                const actual = isLeapYear('0000');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+        // Unit test 8.
+            QUnit.testDate("", function (assert) {
+                const actual = isDateValid('terje');
+                const expected = true;
+                assert.equal(actual, expected);
+        });
+
+        // Unit test 9.
+            QUnit.testDate("", function (assert) {
+                const actual = isDateValid('03.02.2020');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+        // Unit test 10.
+            QUnit.testDate("", function (assert) {
+                const actual = isDateValid('03.02.2020');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+        // Unit test 11.
+            QUnit.testDate("", function (assert) {
+                const actual = isDateValid('03.02.2020');
+                const expected = true;
+                assert.equal(actual, true);
+        });
+
+    </script>
+
+</body>
+</html>
