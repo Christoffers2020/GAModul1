@@ -1,129 +1,162 @@
-<html>
-<body>
-    <svg width="600" height="600" id="entorno">
-		<g id="fondo"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master//pikachu.png" width="400" height="400" x="200" y="100"></g>
-	<g class="padre" id="0"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/1.png" class="movil"></g>
-	<g class="padre" id="1"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/2.png" class="movil"></g>
-	<g class="padre" id="2"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/3.png" class="movil"></g>
-	<g class="padre" id="3"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/4.png" class="movil"></g>
-	<g class="padre" id="4"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/5.png" class="movil"></g>
-	<g class="padre" id="5"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/6.png" class="movil"></g>
-	<g class="padre" id="6"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/7.png" class="movil"></g>
-	<g class="padre" id="7"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/8.png" class="movil"></g>
-	<g class="padre" id="8"><image xlink:href="https://raw.githubusercontent.com/NestorPlasencia/pikachu-puzzle/master/9.png" class="movil"></g>
-</svg>
-<audio id="win" src="https://raw.githubusercontent.com/NestorPlasencia/PikaPuzzle/master/media/win.mp3"></audio>
-    
-<style>
-#entorno {
-	display: block;
-	margin: 0 auto;
-}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>Magical frog puzzle</title>
+    <style>
+        
+        /* The style of the puzzle*/
+        #puzzle {
+            /* Setting the display behavior of the puzzle element, setting the puzzle to */
+            /* start on a new line and taking up the entire width, along with the margin.*/
+            display: block;
+            margin: 0 auto;
+        }
 
-#fondo {
-	opacity: 0.3;
-}
-</style>
-<script>
+        #background {
+            /* Setting the opacity for the background of the puzzle element. */
+            opacity: 0.3;
+        }
 
-var piezas = document.getElementsByClassName('movil');
+    </style>
 
-var tamWidh = [134,192,134,163,134,163,134,192,134];
-var tamHeight = [163,134,163,134,192,134,163,134,163];
+    <body>
+        <!--This is the making of the puzzle itself with its 16 pieces
+        with width, height, id's for the parts and classes.-->
+        <svg width="1200" height="700" id="puzzle">
+            <g id="background"><image xlink:href="https://brorviking.github.io/GEThub/Froge/FROGE2.png" width="768" height="560" x="232" y="132"></g>
+            <g class="part" id="1"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-1-col-1.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="2"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-1-col-2.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="3"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-1-col-3.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="4"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-1-col-4.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="5"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-2-col-1.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="6"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-2-col-2.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="7"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-2-col-3.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="8"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-2-col-4.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="9"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-3-col-1.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="10"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-3-col-2.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="11"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-3-col-3.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="12"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-3-col-4.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="13"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-4-col-1.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="14"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-4-col-2.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="15"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-4-col-3.jpg" width="192" height="140" class="move"></g>
+            <g class="part" id="16"><image xlink:href="https://brorviking.github.io/GEThub/Froge/row-4-col-4.jpg" width="192" height="140" class="move"></g>
+        </svg>
 
-for(var i=0;i<piezas.length;i++){
-	piezas[i].setAttribute("width", tamWidh[i]);
-	piezas[i].setAttribute("height",tamHeight[i]);
-	piezas[i].setAttribute("x", Math.floor((Math.random() * 10) + 1));
-	piezas[i].setAttribute("y", Math.floor((Math.random() * 409) + 1));
-	piezas[i].setAttribute("onmousedown","seleccionarElemento(evt)");
-}
+    <!--Another picture will appear when the puzzle is complete-->
+    <img id="win2" src="https://brorviking.github.io/GEThub/Froge/prince.png"></img>
 
-var elementSelect = 0;  
-var currentX = 0;
-var currentY = 0;
-var currentPosX = 0;
-var currentPosY = 0;
+    <!--A song has been added to play when the puzzle is complete-->
+    <audio id="win" src="https://brorviking.github.io/GEThub/Froge/Princess%20and%20the%20Frog%20OST%20-%2008%20-%20Ma%20Belle%20Evangeline.mp3"></audio>
+        
+        <script>
 
-function seleccionarElemento(evt) {
-	elementSelect = reordenar(evt);
-	currentX = evt.clientX;        
-	currentY = evt.clientY;
-	currentPosx = parseFloat(elementSelect.getAttribute("x"));     
-	currentPosy = parseFloat(elementSelect.getAttribute("y"));
-	elementSelect.setAttribute("onmousemove","moverElemento(evt)");
-}
+        // Defining the variables that will change on the page.
+        var pieces = document.getElementsByClassName('move');
 
-function moverElemento(evt){
-	var dx = evt.clientX - currentX;
-	var dy = evt.clientY - currentY;
-	currentPosx = currentPosx + dx;
-	currentPosy = currentPosy + dy;
-	elementSelect.setAttribute("x",currentPosx);
-	elementSelect.setAttribute("y",currentPosy);
-	currentX = evt.clientX;        
-	currentY = evt.clientY;
-	elementSelect.setAttribute("onmouseout","deseleccionarElemento(evt)");
-	elementSelect.setAttribute("onmouseup","deseleccionarElemento(evt)");
-	iman();
-}
+        var Width = [192,192,192,192,192,192,192,192,192,192,192,192,192,192,192,192];
+        var Height = [140,140,140,140,140,140,140,140,140,140,140,140,140,140,140,140];
+        
+        // 
+        for(var i=0;i<pieces.length;i++){
+        pieces[i].setAttribute("width", Width[i]);
+        pieces[i].setAttribute("height",Height[i]);
+        pieces[i].setAttribute("x", Math.floor((Math.random() * 17) + 1));
+        pieces[i].setAttribute("y", Math.floor((Math.random() * 617) + 1));
+        pieces[i].setAttribute("onmousedown","selectElement(evt)");
+        }
+        
+        // Defining the variables for the selected element, current and current position.
+        var elementSelect = 0;  
+        var currentX = 0;
+        var currentY = 0;
+        var currentPosX = 0;
+        var currentPosY = 0;
 
-function deseleccionarElemento(evt){
-	testing();
-	if(elementSelect != 0){			
-		elementSelect.removeAttribute("onmousemove");
-		elementSelect.removeAttribute("onmouseout");
-		elementSelect.removeAttribute("onmouseup");
-		elementSelect = 0;
-	}
-}
+        // Making a function to make the parts of the puzzle move.
+        function selectElement(evt) {
+            elementSelect = reorder(evt);
+            currentX = evt.clientX;        
+            currentY = evt.clientY;
+            currentPosx = parseFloat(elementSelect.getAttribute("x"));     
+            currentPosy = parseFloat(elementSelect.getAttribute("y"));
+            elementSelect.setAttribute("onmousemove","moveElement(evt)");
+        }
 
-var entorno = document.getElementById('entorno');
+        // Making a function to select new parts.
+        function moveElement(evt){
+            var dx = evt.clientX - currentX;
+            var dy = evt.clientY - currentY;
+            currentPosx = currentPosx + dx;
+            currentPosy = currentPosy + dy;
+            elementSelect.setAttribute("x",currentPosx);
+            elementSelect.setAttribute("y",currentPosy);
+            currentX = evt.clientX;        
+            currentY = evt.clientY;
+            elementSelect.setAttribute("onmouseout","reselectElement(evt)");
+            elementSelect.setAttribute("onmouseup","reselectElement(evt)");
+            magnet();
+        }
 
-function reordenar(evt){
-	var padre = evt.target.parentNode;
-	var clone = padre.cloneNode(true);
-	var id = padre.getAttribute("id");
-	entorno.removeChild(document.getElementById(id));
-	entorno.appendChild(clone);
-	return entorno.lastChild.firstChild;
-}
+        // Making a function to select another element.
+        function reselectElement(evt){
+            testing();
+            if(elementSelect != 0){			
+                elementSelect.removeAttribute("onmousemove");
+                elementSelect.removeAttribute("onmouseout");
+                elementSelect.removeAttribute("onmouseup");
+                elementSelect = 0;
+            }
+        }
 
-var origX = [200,304,466,200,333,437,200,304,466];   
-var origY = [100,100,100,233,204,233,337,366,337];
+        // Defining the puzzle variable.
+        var puzzle = document.getElementById('puzzle');
 
-function iman(){
-	for(var i=0;i<piezas.length;i++){
-		if (Math.abs(currentPosx-origX[i])<15 && Math.abs(currentPosy-origY[i])<15) {
-			elementSelect.setAttribute("x",origX[i]);
-			elementSelect.setAttribute("y",origY[i]);
-		}
-	}
-}
-			
-var win = document.getElementById("win");
+        // 
+        function reorder(evt){
+            var part = evt.target.parentNode;
+            var clone = part.cloneNode(true);
+            var id = part.getAttribute("id");
+            puzzle.removeChild(document.getElementById(id));
+            puzzle.appendChild(clone);
+            return puzzle.lastChild.firstChild;
+        }
 
-function testing() {
-	var bien_ubicada = 0;
-	var padres = document.getElementsByClassName('padre');
-	for(var i=0;i<piezas.length;i++){
-		var posx = parseFloat(padres[i].firstChild.getAttribute("x"));    
-		var posy = parseFloat(padres[i].firstChild.getAttribute("y"));
-		ide = padres[i].getAttribute("id");
-		if(origX[ide] == posx && origY[ide] == posy){
-			bien_ubicada = bien_ubicada + 1;
-		}
-	}
-	if(bien_ubicada == 9){
-		win.play();
-	}
-}
+        // Defining the last variables, locating the magnet position for the parts.
+        var origX = [232,232,232,232,424,424,424,424,616,616,616,616,808,808,808,808];
+        var origY = [174,286,398,510,174,286,398,510,174,286,398,510,174,286,398,510];
 
+        // Making a function to lock in the pieces in the puzzle.
+        function magnet(){
+            for(var i=0;i<pieces.length;i++){
+                if (Math.abs(currentPosx-origX[i])<17 && Math.abs(currentPosy-origY[i])<17) {
+                    elementSelect.setAttribute("x",origX[i]);
+                    elementSelect.setAttribute("y",origY[i]);
+                }
+            }
+        }
+           
+        // Defining the winning 
+        var win = document.getElementById("win");
 
-</script>
+        // Making a function to test where the 
+        function testing() {
+            var rightLocation = 0;
+            var parts = document.getElementsByClassName('part');
+            for(var i=0;i<pieces.length;i++){
+                var posx = parseFloat(parts[i].firstChild.getAttribute("x"));
+                var posy = parseFloat(parts[i].firstChild.getAttribute("y"));
+                ide = parts[i].getAttribute("id");
+                if(origX[ide] == posx && origY[ide] == posy){
+                    rightLocation = rightLocation + 1;
+                }
+            }
+            if(rightLocation == 16){
+                win.play();
+            }
+        }
+
+    </script>
+
 
 </body>
-
-
-
 </html>
