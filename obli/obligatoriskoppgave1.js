@@ -22,7 +22,7 @@
 
     // Unit 3 - checking for year.
     function checkYear(ValidDate) {
-        var year = 'year.length === 4 && year >= '0000' && year <= '9999';
+        var year = 'year.length === 4 && year >= '0000' && year<= '9999';
             if (year === ValidDate.indexOf('0000')) {
             return true;
         } else {
