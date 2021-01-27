@@ -19,13 +19,11 @@
         // model
         var points = 0;
         var pointsPerClick = 1;
-        var pointsPerClick2 = 10;
         var smileyIndex = 0;
 
         // controller
         function doClick() {
             points += pointsPerClick;
-            points += pointsPerClick2;
             smileyIndex = 1 - smileyIndex;
             updateView();
         }
@@ -40,7 +38,7 @@
         function buyUpgrade2() {
             if (points < 10) return;
             points -= 10;
-            pointsPerClick2 ++;
+            pointsPerClick+10;
             updateView();
         }
 
