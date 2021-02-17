@@ -1,0 +1,24 @@
+<html lang=eng>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+<Body>
+
+    <div id="div1">måne</div>
+    <div id="div2" onclick="trykktest(this)">sol</div>
+
+<script>
+    
+    function trykktest(vifårse) {
+        vifårse.innerhtml = "this"
+        document.getElementById("div1").innerHTML = vifårse.innerHTML; 
+
+        document.getElementById('a').innerHTML = '' + new Date().toTimeString();
+
+    }
+
+</script>
+
+</Body>
+</html>
