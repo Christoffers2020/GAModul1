@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<Html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>terjeoppgave></title>
+  <style>
+    #app {
+      font-size: 600%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    let diceCount = 1
+    let diceValues = [];
+    let diceSymbols = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+    updateView();
+    function updateView() {
+      var html = '';
+      for (let diceValue of diceValues) {
+        html += diceSymbols[diceValue];
+      }
+      document.getElementById("app").innerHTML  = html
+
+    }
+
+    roll();
+    function roll() {
+      console.log("hei")
+      for (var i = 0; i < diceSymbols.length; i++) {
+        console.log(diceSymbols[i])
+      }
+      updateView();
+
+    }
+  </script>
+
+
+
+</body>
+
+
+</Html>

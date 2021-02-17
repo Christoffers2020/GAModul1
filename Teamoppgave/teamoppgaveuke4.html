@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjektivhistorie</title>
+</head>
+<body>
+
+    
+    <div id='output'></div>
+
+    <script>
+
+    let output = document.getElementById('output')
+
+    // Model
+    var ourWord = '';
+    var førsteOrd="";
+    
+    var ListeMedOrd = ['forferdelige', 'stygge', 'blåprikkede', 'morsomme', 'rare', 'gale', 
+    'kule', 'ulovlige', 'ville', 'fjerne', 'voksene', 'hestete', 'høye', 'lave', 'spesielle', 
+    'sexye', 'ekle', 'talentløse', 'nådeløse', 'eiesyke', 'apeaktige', 'kåte', 'makabre', 'snørrete'];
+    
+    let randomVerdi = Math.floor(Math.random()* 3)
+    //ListeMedOrd[0] = "hei";
+    // View
+    viewStory();
+        function viewStory() {
+            output.innerHTML = `
+                <div> Det var en gang en ${ListeMedOrd[0]} skole, hvor den ${ListeMedOrd[1]} klassen fantes. <br/>
+                For denne ${ListeMedOrd[2]} klassen, med disse ${ListeMedOrd[3]} elevene var det ${ListeMedOrd[4]} Liv og ${ListeMedOrd[22]} 
+                Randi som var lærere. <br/><br/>
+
+                Elevene lærte ${ListeMedOrd[5]} fag. I denne klassen var det ${ListeMedOrd[6]} jenter og ${ListeMedOrd[7]} gutter.<br/> 
+                Alle satt på ${ListeMedOrd[8]} stoler og bak ${ListeMedOrd[9]} pulter. Alle fulgte med i den ${ListeMedOrd[10]} undervisningen. <br/>
+                I matte undervisningen er klassen den mest ${ListeMedOrd[11]} klassen som finnes. 
+                Alles innsats er ${ListeMedOrd[12]} god. <br/><br/>
+
+                Når den ${ListeMedOrd[13]} rektoren kommer inn gjennom den ${ListeMedOrd[14]} døra til vårt ${ListeMedOrd[15]} klasserom, 
+                reiser alle de ${ListeMedOrd[16]} elevene seg opp og hører på hva den ${ListeMedOrd[17]} rektoren har å si. <br/> 
+                Den ${ListeMedOrd[18]} oppfører klassen seg ${ListeMedOrd[19]}. Det var en fortelling om den ${ListeMedOrd[20]} 
+                klassen på den ${ListeMedOrd[21]} skolen.</div>
+
+            <select id="display">
+                <option value="forferdelige">forferdelige</option>
+                <option value="stygge">stygge</option>
+                <option value="blåprikkede">blåprikkede</option>
+                <option value="morsomme">morsomme</option>
+                <option value="rare">rare</option>
+                <option value="gale">gale</option>
+                <option value="kule">kule</option>
+                <option value="ulovlige">ulovlige</option>
+                <option value="ville">ville</option>
+                <option value="fjerne">fjerne</option>
+                <option value="voksene">voksene</option>
+                <option value="hestete">hestete</option>
+                <option value="høye">høye</option>
+                <option value="lave">lave</option>
+                <option value="spesielle">spesielle</option>
+                <option value="sexye">sexye</option>
+                <option value="ekle">ekle</option>
+                <option value="talentløse">talentløse</option>
+                <option value="nådeløse">nådeløse</option>
+                <option value="eiesyke">eiesyke</option>
+                <option value="apeaktige">apeaktige</option>
+                <option value="kåte">kåte</option>
+                <option value="makabre">makabre</option>
+                <option value="snørrete">snørrete</option>
+            </select>
+
+            <button onclick="clear()">Click to Remove Me!></button>`;
+        };
+            
+       viewStory();
+
+        // Controller
+        function velgAdjektiv(chosenWord) {
+            ourWord += chosenWord.innerHTML;
+            viewStory()
+        }
+        function velgeListe(){
+            // trenger verdi fra select
+            document.getElementById("display").value = "forferdelige";
+            // trenger å legge verdien fra select in i riktig posisjon i lista
+            
+            // trenger å gå videre til neste element i lista 
+
+            // tips: for løkke , even
+            viewStory() 
+        };
+
+        function clear() {
+            ourWord = '';
+            viewStory();
+        }
+
+    </script>
+    
+</body>
+</html>

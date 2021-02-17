@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+
+    <h3>Løkker og tabeller</h3>
+    <ul>
+        <il>Løkker
+            <ul>
+                <li><tt>while</tt></li>
+                <li><tt>for</tt></li>
+            </ul>
+        </il>
+        <il>Tabeller - "array"</il>
+    </ul>
+    <hr />
+
+
+    <script type="text/javascript">
+
+
+        // for løkke                 for (var i = 1; i <= 9; i++);
+
+        // tall, og rekke nedover    document.write('Chris ' + i '<br/>');                
+
+        // I                         er ofte en index eller en løpevariabel   
+
+        //   i++;                   Teller oppover siden det er 2 ++
+
+        //  "While"                 Hvor du kan hoppe tilbake til if settninger, er en gjentagende if settning.
+        //                          er det samme som flere like IFer
+
+        //   <=                      Mindre en "er lik"
+        //var i = 1;
+        //while (i <= 3) {
+        //    document.write('Chris ');
+        //    i++;
+        //}
+
+        //var names = ['per', 'Pål', 'Espem']; Eks 1
+
+        var names = [];
+        names.push('per');
+        names.push('Espen');
+        //var name = names.pop();
+         
+        
+        for (var i = 0; i < names.length; i++) {
+            document.write('Hei, ' + names[i] + '!<br/>')
+        }
+
+        //document.write(names.length); // Antall Navn (3)
+        //document.write(names); //navn kommer frem
+        //document.write(names[0]); //hvilket navn som skal vises
+
+
+    </script>
+</body>
+
+</html>

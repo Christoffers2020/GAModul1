@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <script src="LoginController.js"></script>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        //model innholder info for å tegne opp bilde. Variabler = Let/Var
+        // null betyr ingen verdi
+        // screen for å se hvor vi er i Applikasjonen
+        let screen = 'login';
+        let errorMessage = null;
+        let username = null;
+        let password = null;
+        let isLoggedin = false;
+
+
+
+        //View
+        // "||" Eller
+        // "Placeholder" En gjennomsiktig tekst for fjerner seg når man skriver over den.  
+
+        // Dette er et eksemple på Tekst over Login
+        // Brukernavn:<br />
+        // <input id:="username" type="txt" /><br />
+
+        // Eks på tekst innenfor feltet der du skriver
+        //<input placeholder="passord" id="password" type="password" /><br />
+
+        //For å aktivere
+        //${username || ''}
+
+        // for å slippe bruke document.getelement // Oppdatere variabel 
+        // Kopiere verdi inn i passordfeltet
+        // oninput="username = this.value" 
+
+        //show vis/oppdatere skjermen
+
+        // er vi inne på login skjermen så skal den kjøre showLoginForm. lije 42 
+
+        //  function showMainAppScreen() er hva som vises når du har logget inn
+
+        //  else if (screen === 'main') showMainAppScreen(); når du er logget inn. 
+        show();
+        function show() {
+            if (screen === 'login') showLoginForm();
+            else if (screen === 'main') showMainAppScreen();
+
+        }
+
+        showLoginForm()
+        function showLoginForm() {
+            document.getElementById('app').innerHTML = `
+          <div id="error" style="color: red">${errorMessage || ''}</div>
+          Brukernavn:<br />
+          <input placeholder="brukernavn"
+                 id:="username" 
+                 type="txt" 
+                 oninput="username = this.value" 
+                 value=${username || ''} /><br />
+          Passord:<br />
+          <input placeholder="passord" 
+                id="password" 
+                type="password" 
+                oninput="password = this.value"
+                value=${password || ''} /><br />
+          <button onclick="logIn()">Logg inn</button>  
+        `;
+        }
+
+        function showMainAppScreen() {
+            document.getElementById('app').innerHTML = `
+           <small>Du er logget in som ${username}</small>
+           <h1>velkommen til etter login!</h1>
+        `;
+        }
+
+    </script>
+</body>
+
+</html>

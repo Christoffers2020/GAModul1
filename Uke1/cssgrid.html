@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        div.page {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 200px 2fr 20px;
+            grid-template-areas: "header header"
+                                 "menu mainContent"
+                                 "footer footer";
+        }
+        Div.header {
+            background-color: aqua;
+            grid-area: header;
+            text-align: center;
+            color: pink;
+        }
+        Div.menu {
+            background-color: aquamarine;
+            grid-area: menu;
+        }
+        Div.mainContent {
+            background-color: blanchedalmond;
+            grid-area: mainContent;
+            text-align: center;
+        }
+        Div.footer {
+            background-color: lightgray;
+            grid-area: footer;
+            text-align: right;
+        }
+        @media only screen and (max-width: 600px) {
+            div.page {
+            grid-template-columns: 1fr;
+            grid-template-rows: 20px 1fr 1fr 20px;
+            grid-template-areas: "header"
+                                 "menu"
+                                 "mainContent"
+                                 "footer";
+        }   
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+    <div class="header"><h1>Overskrift</h1></div>
+    <div class="menu">Menu</div>
+    <div class="maincontent">Hvordan lager vi en nettside
+        <P style="text-align: left;"> Dette er en test som vis om jeg klarer dette eller ikke.</P>
+        <P style="text-align: left;"> Dette er en test som vis om jeg klarer dette eller ikke.</P>
+        <P style="text-align: left;"> Dette er en test som vis om jeg klarer dette eller ikke.</P>
+        <P style="text-align: left;"> Dette er en test som vis om jeg klarer dette eller ikke.</P>
+        </div>
+    <div Class="footer">Copy right @2021
+</body>
+
+
+</html>
